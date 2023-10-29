@@ -20,8 +20,7 @@ class Auth0Controller extends AbstractController
         // will redirect to Auth0!
         return $clientRegistry
             ->getClient('auth0') // key used in config/packages/knpu_oauth2_client.yaml
-            ->redirect([
-            ]);
+            ->redirect();
     }
 
     /**
