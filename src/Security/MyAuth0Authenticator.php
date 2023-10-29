@@ -5,6 +5,7 @@ namespace App\Security;
 use Doctrine\ORM\EntityManagerInterface;
 use KnpU\OAuth2ClientBundle\Client\ClientRegistry;
 use KnpU\OAuth2ClientBundle\Security\Authenticator\OAuth2Authenticator;
+use KnpU\OAuth2ClientBundle\Client\Provider\Auth0Client;
 use Riskio\OAuth2\Client\Provider\Auth0ResourceOwner;
 use Symfony\Component\HttpFoundation\Exception\BadRequestException;
 use Symfony\Component\HttpFoundation\Request;
@@ -49,6 +50,7 @@ class MyAuth0Authenticator extends OAuth2Authenticator implements Authentication
 
     public function authenticate(Request $request): Passport
     {
+        /** @var Auth0Client $client */
         $client = $this->clientRegistry->getClient('auth0');
         $accessToken = $this->fetchAccessToken($client);
 
