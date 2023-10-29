@@ -1,1 +1,2 @@
-
+database:
+  type: postgresql:15
