@@ -6,13 +6,13 @@ use KnpU\OAuth2ClientBundle\Client\ClientRegistry;
 use League\OAuth2\Client\Provider\Exception\IdentityProviderException;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Routing\Annotation\Route;
 
 class Auth0Controller extends AbstractController
 {/**
  * Link to this controller to start the "connect" process
- *
- * @Route("/connect/auth0", name="connect_auth0_start")
  */
+    #[Route(path: "/connect/auth0", name: "connect_auth0_start")]
     public function connectAction(ClientRegistry $clientRegistry)
     {
         // on Symfony 3.3 or lower, $clientRegistry = $this->get('knpu.oauth2.registry');
