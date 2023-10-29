@@ -28,9 +28,8 @@ class Auth0Controller extends AbstractController
      * After going to Facebook, you're redirected back here
      * because this is the "redirect_route" you configured
      * in config/packages/knpu_oauth2_client.yaml
-     *
-     * @Route("/connect/auth0/check", name="connect_auth0_check")
-     */
+    */
+    #[Route(path: "/connect/auth0/check", name: "connect_auth0_check")]
     public function connectCheckAction(Request $request, ClientRegistry $clientRegistry)
     {
 
