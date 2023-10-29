@@ -12,5 +12,12 @@
     </head>
     <body>
         {% block body %}{% endblock %}
+        <div>
+            <a
+               href="{{ path('connect_auth0_start') }}"
+            >
+                Login
+            </a>
+        </div>
     </body>
 </html>
