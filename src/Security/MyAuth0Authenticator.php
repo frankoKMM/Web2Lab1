@@ -37,7 +37,7 @@ class MyAuth0Authenticator extends OAuth2Authenticator implements Authentication
     public function start(Request $request, AuthenticationException $authException = null)
     {
         return new RedirectResponse(
-            '/connect/auth0', // might be the site, where users choose their oauth provider
+            '/connect/', // might be the site, where users choose their oauth provider
             Response::HTTP_TEMPORARY_REDIRECT
         );
     }
